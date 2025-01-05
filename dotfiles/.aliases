@@ -1,0 +1,47 @@
+# GIT ALIASES -----------------------------------------------------------------
+alias gf='git fetch'
+alias gs='git status'
+alias ga='git add'
+alias gaa='ga --all'
+alias gc='git commit -m'
+alias gaac='gaa && gc'
+alias gpf='git pull --ff-only'
+alias gpr='git pull --rebase'
+alias gp='git push'
+alias gg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all"
+alias gg2="git log --graph --date-order --date=short \--pretty=format:'%C(auto)%h%d %C(reset)%s %C(bold blue)%ce %C(reset)%C(green)%cr (%cd)'"
+
+alias gw='git switch'
+alias gwm='gw main'
+alias gwd='gw dev'
+
+gac() {
+    local message="$1"
+    shift
+    git add "$@" && git commit -m "$message"
+}
+
+# amend = git commit -a --amend --no-edit
+
+# - git fop = git fetch origin --prune
+# - git mofo = git merge origin/master --ff-only
+# - git edit = git commit --amend
+# - git forgot = git edit --no-edit
+# - git hist = git log --one-line -10
+# - git dw = git diff -w
+# - git dws = git dw --staged
+# - git swh = git show -w HEAD
+# alias gco='git checkout'
+# alias gb='git branch'
+# alias gba='git branch --all'
+# alias gbd='git branch -D'
+# alias gcp='git cherry-pick'
+# alias gd='git diff -w'
+# alias gds='git diff -w --staged'
+# alias grs='git restore --staged'
+# alias gst='git rev-parse --git-dir > /dev/null 2>&1 && git status || exa'
+# alias gu='git reset --soft HEAD~1'
+# alias gpr='git remote prune origin'
+# alias ff='gpr && git pull --ff-only'
+# alias grd='git fetch origin && git rebase origin/master'
+# alias gbb='git-switchbranch'
