@@ -1,10 +1,21 @@
-# https://mths.be/macos
+#!/usr/bin/env zsh
+
+xcode-select --install
+echo "Complete the installation of Xcode Command Line Tools before proceeding."
+
+
 
 ###############################################################################
 # Manual Checks and Settings                                                  #
 ###############################################################################
 # check reduce motion opiton if it is enabled
 # enbale manually keyboard the shortcut option+cmd+d to show or hide the dock in settings > keyboard > keyboard shortcuts > Launchpad & Dock
+# Trackpad: map two-tap to right-click
+# Using Caps Lock key as ESC key
+# Use Fn Key to Caps Lock
+
+
+
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
@@ -19,6 +30,23 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
+
+# Set up Desktop Image
+# # Get the absolute path to the image
+# IMAGE_PATH="${HOME}/dotfiles/settings/Desktop.png"
+
+# # AppleScript command to set the desktop background
+# osascript <<EOF
+# tell application "System Events"
+#     set desktopCount to count of desktops
+#     repeat with desktopNumber from 1 to desktopCount
+#         tell desktop desktopNumber
+#             set picture to "$IMAGE_PATH"
+#         end tell
+#     end repeat
+# end tell
+# EOF
+
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
@@ -84,8 +112,12 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
 
-# Using Caps Lock key as ESC key
+# Set scroll as traditional instead of natural
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
+# Add Bluetooth to Menu Bar for battery percentages
+defaults write com.apple.controlcenter "NSStatusItem Visible Bluetooth" -bool true
+killall ControlCenter
 
 # apple Fn key to activate Caps Lock
 defaults write com.apple.HIToolbox AppleFnUsageType -int "0"
@@ -95,15 +127,11 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
-# Trackpad: map two-tap to right-click
-
 # Use scroll gesture with the Ctrl (^) modifier key to zoom
 defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
 # Follow the keyboard focus while zoomed in
 defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
-
-
 
 # Disable press-and-hold for keys in favor of key repeat
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
@@ -173,7 +201,10 @@ defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # Save screenshots to the desktop
-defaults write com.apple.screencapture location -string "${HOME}/Desktop"
+
+# Set location for screenshots
+mkdir "${HOME}/Desktop/Screenshots"
+defaults write com.apple.screencapture location -string "${HOME}/Desktop/Screenshots"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"

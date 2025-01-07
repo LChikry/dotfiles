@@ -1,13 +1,15 @@
-xcode-select --install
+#!/usr/bin/env zsh
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# Run the MacOS Script
+./script/macos.sh
 
-brew bundle --file ~/.setup/config/Brewfile
+# Run the Homebrew Script
+./script/brew.sh
 
-# first delete file if they doesn't exist
-ln -s ~/.setup/dotfiles/.zshrc ~/.zshrc
-ln -s ~/.setup/dotfiles/.gitignore ~/.gitignore
-ln -s ~/.setup/dotfiles/.gitconfig ~/.gitconfig
-ln -s ~/.setup/config/aerospace.toml ~/.config/aerospace/aerospace.toml
+# Run VS Code Script
+./script/vscode.sh
 
+# Run Symlink Script
+./script/symlink.sh
 
+echo "Installation Complete!"
