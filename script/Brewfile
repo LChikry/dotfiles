@@ -34,6 +34,8 @@ brew "eza"
 brew "tlrc"
 # Better cd
 brew "zoxide"
+# Python
+brew "python"
 
 
 

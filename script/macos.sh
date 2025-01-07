@@ -1,10 +1,5 @@
 #!/usr/bin/env zsh
 
-xcode-select --install
-echo "Complete the installation of Xcode Command Line Tools before proceeding."
-
-
-
 ###############################################################################
 # Manual Checks and Settings                                                  #
 ###############################################################################
@@ -15,7 +10,9 @@ echo "Complete the installation of Xcode Command Line Tools before proceeding."
 # Use Fn Key to Caps Lock
 
 
-
+###############################################################################
+# Sudo Privelages & Xcode command line                                        #
+###############################################################################
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
@@ -26,6 +23,10 @@ sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+xcode-select --install
+echo "Complete the installation of Xcode Command Line Tools before proceeding."
+
 
 ###############################################################################
 # General UI/UX                                                               #

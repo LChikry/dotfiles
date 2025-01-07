@@ -1,4 +1,11 @@
 ###############################################################################
+#                             Function to Check Command Existence            #
+###############################################################################
+command_exists() {
+    command -v "$1" >/dev/null 2>&1
+}
+
+###############################################################################
 #                                       GIT                                   #
 ###############################################################################
 alias gf='git fetch'
@@ -49,15 +56,24 @@ alias gg2="git log --graph --date-order --date=short \--pretty=format:'%C(auto)%
 ###############################################################################
 #                             Navigation & Search                             #
 ###############################################################################
-alias go='cd'
+alias goto='cd'
 if command_exists z; then
   alias cd='z'
-  alias go='z'
+  alias goto='z'
 fi
+alias gor="cd -"            # Go return to prev visited dir
+alias goh='cd ~/LC'
+alias gop='cd ~/LC/2_Areas/Programming_Projects'
+alias gos='cd ~/LC/2_Areas/Academics/AUI\ University/6th\ Semester'
 alias godw="cd ~/Downloads" # Go to Downloads
 alias gods="cd ~/Desktop"   # Go to Downloads
 alias godc="cd ~/Documents" # Go to Downloads
-alias gor="cd -"           # Go return to prev visited dir
+alias gofh='open ~/LC'
+alias gofp='open ~/LC/2_Areas/Programming_Projects'
+alias gofs='open ~/LC/2_Areas/Academics/AUI\ University/6th\ Semester'
+alias gofdw="open ~/Downloads" # Go to Downloads
+alias gofds="open ~/Desktop"   # Go to Downloads
+alias gofdc="open ~/Documents" # Go to Downloads
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -73,7 +89,7 @@ alias la="ls -a"
 
 
 ###############################################################################
-#                                Editors & Preview                            #
+#                              Editors & Languages                            #
 ###############################################################################
 alias c='clear'
 alias clr='clear'
@@ -84,6 +100,8 @@ if command_exists nvim; then
   alias vim='nvim'
   alias vi='nvim'
 fi
+alias python='python3'
+alias pip='pip3'
 
 
 
@@ -96,4 +114,7 @@ if command_exists brew; then
   alias hbl="brew list"
   alias hbu="brew uninstall"
   alias hbn="brew info"
+  # Update/upgrade Homebrew and their installed packages
+  alias update_brew='brew update; brew upgrade; brew upgrade --cask; brew cleanup'
 fi
+
