@@ -1,0 +1,79 @@
+##################################################################################################
+#                                               Tap                                              #
+##################################################################################################
+tap "homebrew/bundle"
+tap "homebrew/services"
+
+
+
+##################################################################################################
+#                                           Formulas                                             #
+##################################################################################################
+
+# Build tool for C and C++
+brew "cmake"
+# Cross-platform C and C++ unit testing framework for the 21st century
+brew "criterion"
+# GNU compiler collection
+brew "gcc"
+# Distributed revision control system
+brew "git"
+# UNIX Shell
+brew "zsh"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Object-relational database system
+brew "postgresql@17", restart_service: true, link: true
+# Internet file retriever
+brew "wget"
+# Better Git diff
+brew "git-delta"
+# Better ls
+brew "eza"
+# Convenient man page
+brew "tlrc"
+# Better cd
+brew "zoxide"
+
+
+
+##################################################################################################
+#                                             Apps                                               #
+##################################################################################################
+
+# AeroSpace is an i3-like tiling window manager for macOS
+cask "aerospace"
+# Distribution of the Python and R programming languages for scientific computing
+cask "anaconda"
+# Control your tools with a few keystrokes
+cask "raycast"
+# Free Video Downloader
+cask "4k-video-downloader+"
+# Customizable timing of breaks
+cask "time-out"
+# IntelliJ IDEA CE
+cask "intellij-idea-ce"
+# VS Code
+cask "visual-studio-code"
+# VS Code plugins
+vscode "asvetliakov.vscode-neovim"
+vscode "formulahendry.code-runner"
+vscode "gulajavaministudio.mayukaithemevsc"
+vscode "ms-python.debugpy"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-toolsai.jupyter"
+vscode "ms-toolsai.jupyter-keymap"
+vscode "ms-toolsai.jupyter-renderers"
+vscode "ms-toolsai.vscode-jupyter-cell-tags"
+vscode "ms-toolsai.vscode-jupyter-slideshow"
+vscode "ms-vscode.cpptools"
+vscode "redhat.java"
+vscode "visualstudioexptteam.intellicode-api-usage-examples"
+vscode "visualstudioexptteam.vscodeintellicode"
+vscode "vscjava.vscode-gradle"
+vscode "vscjava.vscode-java-debug"
+vscode "vscjava.vscode-java-dependency"
+vscode "vscjava.vscode-java-pack"
+vscode "vscjava.vscode-java-test"
+vscode "vscjava.vscode-maven"
