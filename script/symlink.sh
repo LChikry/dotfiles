@@ -47,3 +47,11 @@ for file in "${configdir}"/*; do
     echo "Creating symlink for ${file} -> ${target_dir}/${filename}"
     ln -sf "${file}" "${target_dir}/${filename}"
 done
+
+
+if [[ "$SHELL" == *"zsh"* ]]; then
+    source ~/.zshrc
+elif [[ "$SHELL" == *"bash"* ]]; then
+    source ~/.bashrc
+else
+    echo "Unknown shell!"
