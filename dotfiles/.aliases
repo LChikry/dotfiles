@@ -1,28 +1,26 @@
-# GIT ALIASES -----------------------------------------------------------------
+###############################################################################
+#                                       GIT                                   #
+###############################################################################
 alias gf='git fetch'
 alias gs='git status'
 alias ga='git add'
 alias gaa='ga --all'
 alias gc='git commit -m'
 alias gaac='gaa && gc'
-alias gpf='git pull --ff-only'
-alias gpr='git pull --rebase'
-alias gp='git push'
-alias gg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all"
-alias gg2="git log --graph --date-order --date=short \--pretty=format:'%C(auto)%h%d %C(reset)%s %C(bold blue)%ce %C(reset)%C(green)%cr (%cd)'"
-
-alias gw='git switch'
-alias gwm='gw main'
-alias gwd='gw dev'
-
 gac() {
     local message="$1"
     shift
     git add "$@" && git commit -m "$message"
 }
-
-# amend = git commit -a --amend --no-edit
-
+# alias amend='git commit -a --amend --no-edit'
+alias gpf='git pull --ff-only'
+alias gpr='git pull --rebase'
+alias gp='git push'
+alias gg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all"
+alias gg2="git log --graph --date-order --date=short \--pretty=format:'%C(auto)%h%d %C(reset)%s %C(bold blue)%ce %C(reset)%C(green)%cr (%cd)'"
+# alias gw='git switch'
+# alias gwm='gw main'
+# alias gwd='gw dev'
 # - git fop = git fetch origin --prune
 # - git mofo = git merge origin/master --ff-only
 # - git edit = git commit --amend
@@ -45,3 +43,57 @@ gac() {
 # alias ff='gpr && git pull --ff-only'
 # alias grd='git fetch origin && git rebase origin/master'
 # alias gbb='git-switchbranch'
+
+
+
+###############################################################################
+#                             Navigation & Search                             #
+###############################################################################
+alias go='cd'
+if command_exists z; then
+  alias cd='z'
+  alias go='z'
+fi
+alias godw="cd ~/Downloads" # Go to Downloads
+alias gods="cd ~/Desktop"   # Go to Downloads
+alias godc="cd ~/Documents" # Go to Downloads
+alias gor="cd -"           # Go return to prev visited dir
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
+alias ls='ls -l'
+if command_exists eza; then
+    alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+    alias lt="eza --tree --level=3 --color=always --icons-always"
+fi
+alias la="ls -a"
+
+
+
+###############################################################################
+#                                Editors & Preview                            #
+###############################################################################
+alias c='clear'
+alias clr='clear'
+if command_exists bat; then
+  alias cat='bat'
+fi
+if command_exists nvim; then
+  alias vim='nvim'
+  alias vi='nvim'
+fi
+
+
+
+###############################################################################
+#                                    Packages                                 #
+###############################################################################
+if command_exists brew; then
+  alias hbs="brew search"
+  alias hbi="brew install"
+  alias hbl="brew list"
+  alias hbu="brew uninstall"
+  alias hbn="brew info"
+fi

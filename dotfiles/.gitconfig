@@ -2,14 +2,23 @@
 	name = LChikry
 	email = LChikry@gmail.com
 
-[pull]
-	ff = only
-
 [init]
 	# Set default branch name when creating repos as main
 	defaultBranch = main
 
+[pull]
+	ff = only
+
+[merge]
+    conflictstyle = zdiff3
+
 [core]
+	# Use delta diff instead of git diff
+	pager = delta
+
+	# Setting global gitignore file
+	excludesfile = ~/.gitignore
+	
 	# Setting default editor as VS Code
 	editor = code --wait
 
@@ -27,6 +36,7 @@
 
 [diff]
     tool = default-difftool
+	colorMoved = default
 
 [difftool "default-difftool"]
     cmd = code --wait --diff -w $LOCAL $REMOTE
@@ -38,3 +48,14 @@
 [help]
 	# Automatically correct and execute mistyped commands.
 	autocorrect = 1
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
+	side-by-side = true
+
+[interactive]
+    diffFilter = delta --color-only
+
+
+    
+

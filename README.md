@@ -1,0 +1,1 @@
+- task: Integrate other cloud services into your Dotfiles process (Dropbox, Google Drive, etc.).

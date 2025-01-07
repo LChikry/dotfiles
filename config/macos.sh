@@ -84,6 +84,12 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
 
+# Using Caps Lock key as ESC key
+
+
+# apple Fn key to activate Caps Lock
+defaults write com.apple.HIToolbox AppleFnUsageType -int "0"
+
 # Trackpad: enable tap to click for this user and for the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
@@ -100,7 +106,6 @@ defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 
 
 # Disable press-and-hold for keys in favor of key repeat
-defaults delete NSGlobalDomain ApplePressAndHoldEnabled
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Set a blazingly fast keyboard repeat rate
