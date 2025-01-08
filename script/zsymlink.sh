@@ -25,27 +25,28 @@ done
 mkdir -p "${HOME}/.config"
 # Set the directory where your config files are stored
 configdir="${HOME}/.setup/config"
-# Loop through all files in the config directory
-for file in "${configdir}"/*; do
-    # Skip unwanted files (e.g., .DS_Store)
-    if [[ "$(basename "$file")" == ".DS_Store" ]]; then
+# Loop through all items in the config directory
+for item in "${configdir}"/*; do
+    # Skip unwanted items (e.g., .DS_Store or non-directories)
+    if [[ "$(basename "$item")" == ".DS_Store" || ! -d "$item" ]]; then
         continue
     fi
-    # Get the filename without the path (e.g., "aerospace.toml" from "/path/to/aerospace.toml")
-    filename=$(basename "$file")
 
-    # Extract the base name without the extension to use as the directory name
-    appname="${filename%.*}"
+    # Get the directory name without the path
+    dirname=$(basename "$item")
 
-    # Define the target directory in ~/.config (e.g., ~/.config/aerospace/)
-    target_dir="${HOME}/.config/${appname}"
-    
-    # Create the directory if it doesn't exist
-    mkdir -p "${target_dir}"
+    # Define the target path in ~/.config
+    target="${HOME}/.config/${dirname}"
 
-    # Force symlink creation: this will overwrite any existing file or symlink
-    echo "Creating symlink for ${file} -> ${target_dir}/${filename}"
-    ln -sf "${file}" "${target_dir}/${filename}"
+    # If the target exists, remove it (symlink or directory)
+    if [[ -e "$target" || -L "$target" ]]; then
+        echo "Removing existing item at ${target}"
+        rm -rf "$target"
+    fi
+
+    # Create the symlink for the directory
+    echo "Creating symlink for directory: ${item} -> ${target}"
+    ln -sfn "${item}" "${target}"
 done
 
 
@@ -56,4 +57,3 @@ elif [[ "$SHELL" == *"bash"* ]]; then
 else
     echo 'Unknown shell!'
 fi
-
