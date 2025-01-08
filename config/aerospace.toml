@@ -104,21 +104,21 @@ alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-alt-0 = 'workspace 0' # temporary
 alt-b = 'workspace B' # Browser
 alt-d = 'workspace D' # Documents
 alt-e = 'workspace E' # Emails: MS Outlook
-alt-f = 'workspace F' # Files
+alt-f = 'workspace F' # Files (Finder / FDM)
 alt-i = 'workspace I' # IntelliJ IDEA
-alt-m = 'workspace M' # MS Teams
+alt-m = 'workspace M' # MS Teams / Whatsapp / Telegram
 alt-o = 'workspace O' # Obsidian
 alt-p = 'workspace P' # MS PowerPoint
 alt-t = 'workspace T' # Terminal
 alt-v = 'workspace V' # VS Code
 alt-w = 'workspace W' # MS Word
+alt-1 = 'workspace 1' # Planing & Management (Todoist & Morgen)
+alt-0 = 'workspace 0' # temporary
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-0 = 'move-node-to-workspace 0' # temporary
 alt-shift-b = 'move-node-to-workspace B'
 alt-shift-d = 'move-node-to-workspace D'
 alt-shift-e = 'move-node-to-workspace E'
@@ -130,6 +130,8 @@ alt-shift-p = 'move-node-to-workspace P'
 alt-shift-t = 'move-node-to-workspace T'
 alt-shift-v = 'move-node-to-workspace V'
 alt-shift-w = 'move-node-to-workspace W'
+alt-shift-1 = 'move-node-to-workspace 1'
+alt-shift-0 = 'move-node-to-workspace 0' # temporary
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
