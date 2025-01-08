@@ -89,6 +89,8 @@ cask "shottr"
 cask "4k-video-downloader+"
 # Customizable timing of breaks
 cask "time-out"
+# Grammar & Spell checker
+cask "grammarly-desktop"
 # Free file archiver (i.e zip)
 cask "keka"
 # Better way to uninstall apps
