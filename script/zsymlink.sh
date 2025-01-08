@@ -54,4 +54,6 @@ if [[ "$SHELL" == *"zsh"* ]]; then
 elif [[ "$SHELL" == *"bash"* ]]; then
     source ~/.bashrc
 else
-    echo "Unknown shell!"
+    echo 'Unknown shell!'
+fi
+
