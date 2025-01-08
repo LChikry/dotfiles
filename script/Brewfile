@@ -43,16 +43,66 @@ brew "python"
 #                                             Apps                                               #
 ##################################################################################################
 
+# Battery controller (there is also BatFi)
+# BatFi hidden free download link: https://files.micropixels.software/batfi/BatFi-latest.zip
+# cask "aldente"
+
+# PDFGear: best pdf tool  https://www.pdfgear.com/
+
+# Horo: best minimalist timer & countdown
+
+# Best way to drag and drop file
+# Folder Hub: has better shortcuts
+# cask "dropzone"
+
+
 # AeroSpace is an i3-like tiling window manager for macOS
 cask "aerospace"
-# Distribution of the Python and R programming languages for scientific computing
-cask "anaconda"
 # Control your tools with a few keystrokes
 cask "raycast"
+# Hide menu bar apps
+cask "jordanbaird-ice"
+# Favorite Mac Browser
+cask "arc"
+# Favorite Download Manager
+cask "free-download-manager"
+# Favorite Password Manager
+cask "bitwarden"
+# Favorite 2FA app
+cask "ente-auth"
+# Good calendar+task side-by-side
+cask "morgen"
+# Good task manager
+cask "todoist"
+# temporary long-lived emails
+cask "tempbox"
+# Downloading native macOS Telegram for newer features
+cask "telegram"
+# cask "telegram-desktop" # for some missing features
+# Whatsapp for desktop
+cask "whatsapp"
+# Favorite Media Player
+cask "elmedia-player"
+# Best screenshot app
+cask "shottr"
 # Free Video Downloader
 cask "4k-video-downloader+"
 # Customizable timing of breaks
 cask "time-out"
+# Free file archiver (i.e zip)
+cask "keka"
+# Better way to uninstall apps
+cask "appcleaner"
+# Favorite notetaking app based on markdown
+cask "obsidian"
+# Virtual Machine
+cask "vmware-fusion"
+# UTM: a machine simulator
+cask "utm"
+# Distribution of the Python and R programming languages for scientific computing
+cask "anaconda"
+# Best OpenJDK for LTS right now
+cask "temurin@21"
 # IntelliJ IDEA CE
 cask "intellij-idea-ce"
 # VS Code
