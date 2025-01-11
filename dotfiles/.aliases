@@ -82,7 +82,8 @@ alias ......="cd ../../../../.."
 alias ls='ls -l'
 if command_exists eza; then
     alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
-    alias lt="eza --tree --level=3 --color=always --icons-always"
+    alias lt="ls --tree --level=3"
+
 fi
 alias la="ls -a"
 

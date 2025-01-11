@@ -108,6 +108,10 @@ build/
 .Trashes
 Desktop.ini
 
+### Temporary Files ###
+*~
+~*
+
 ### Thumbnail cache files ###
 ._*
 Thumbs.db
