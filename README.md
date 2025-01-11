@@ -8,6 +8,7 @@ In each file, you will find comments describing what the line or block of lines 
 
 Those two files are responsible of installing applications you specified in the Brewfile and apply all the changes you did in this repo to your machine. Also, keep in mind that `install.sh` file should be updated according to the scripts you will add or remove; For now, it calls only the scripts that exist in the `script` directory.
 
+To add a config file, you need to create a directory that has the name of the app it belogs to under the config directory. In contrast, if you want to add a dotfile, just add it directly under the dotfiles directory.
 
 ## How to Apply this Configuration
 To make use of these dotfiles and config files, and transform your machine to a better working environment, follow these steps:
@@ -25,8 +26,6 @@ chmod +x install.sh
 ./install.sh
 ```
 7. Voila! Just wait from the script to finish; You might get asked to enter your machine password for sudo/root privileges, that's fine.
-
-
 
 ## Future Plans
 - Integrate other cloud services into your Dotfiles process (Dropbox, Google Drive, etc.).
