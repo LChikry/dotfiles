@@ -56,24 +56,22 @@ alias gg2="git log --graph --date-order --date=short \--pretty=format:'%C(auto)%
 ###############################################################################
 #                             Navigation & Search                             #
 ###############################################################################
-alias goto='cd'
 if command_exists z; then
   alias cd='z'
-  alias goto='z'
 fi
-alias gor="cd -"            # Go return to prev visited dir
-alias goh='cd ~/LC'
-alias gop='cd ~/LC/2_Areas/Programming_Projects'
-alias gos='cd ~/LC/2_Areas/Academics/AUI\ University/6th\ Semester'
-alias godw="cd ~/Downloads" # Go to Downloads
-alias gods="cd ~/Desktop"   # Go to Downloads
-alias godc="cd ~/Documents" # Go to Downloads
-alias gofh='open ~/LC'
-alias gofp='open ~/LC/2_Areas/Programming_Projects'
-alias gofs='open ~/LC/2_Areas/Academics/AUI\ University/6th\ Semester'
-alias gofdw="open ~/Downloads" # Go to Downloads
-alias gofds="open ~/Desktop"   # Go to Downloads
-alias gofdc="open ~/Documents" # Go to Downloads
+alias cdr="cd -"            # Go return to prev visited dir
+alias cdh='cd ~/LC'
+alias cdp='cd ~/LC/2_Areas/Programming_Projects'
+alias cds='cd ~/LC/2_Areas/Academics/AUI\ University/6th\ Semester'
+alias cddw="cd ~/Downloads" # Go to Downloads
+alias cdds="cd ~/Desktop"   # Go to Downloads
+alias cddc="cd ~/Documents" # Go to Downloads
+alias cdfh='open ~/LC'
+alias cdfp='open ~/LC/2_Areas/Programming_Projects'
+alias cdfs='open ~/LC/2_Areas/Academics/AUI\ University/6th\ Semester'
+alias cdfdw="open ~/Downloads" # Go to Downloads
+alias cdfds="open ~/Desktop"   # Go to Downloads
+alias cdfdc="open ~/Documents" # Go to Downloads
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
