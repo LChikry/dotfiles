@@ -33,3 +33,5 @@ chmod +x install.sh
 - add vs code plugins and their settings
 - add intellij idea settings
 - add intellij plugins and their settings
+- set default apps (browser, terminal, media plater, editor, pdf, etc)
+- support different os/distros (macos, ubuntu, arch)
