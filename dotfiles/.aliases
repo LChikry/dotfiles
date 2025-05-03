@@ -1,4 +1,4 @@
-###############################################################################
+
 #                             Function to Check Command Existence            #
 ###############################################################################
 command_exists() {
@@ -11,15 +11,18 @@ command_exists() {
 alias gf='git fetch'
 alias gs='git status'
 alias ga='git add'
-alias gaa='ga --all'
+alias gaa='ga -A'
 alias gc='git commit -m'
 alias gaac='gaa && gc'
 gac() {
     local message="$1"
     shift
-    git add "$@" && git commit -m "$message"
+    ga "$@" && gc "$message"
 }
-# alias amend='git commit -a --amend --no-edit'
+alias gca='git commit --amend --no-edit'
+alias gcam='git commit --amend -m'
+alias gcaf='gaa && git commit --amend --no-edit'
+alias gcafm='gaa && gcam'
 alias gpf='git pull --ff-only'
 alias gpr='git pull --rebase'
 alias gp='git push'
@@ -56,6 +59,11 @@ alias gg2="git log --graph --date-order --date=short \--pretty=format:'%C(auto)%
 ###############################################################################
 #                             Navigation & Search                             #
 ###############################################################################
+fs() {
+    aerospace list-windows --all | \
+    fzf --bind 'enter:execute(bash -c "aerospace focus --window-id {1}")+abort'
+}
+
 if command_exists z; then
   alias cd='z'
 fi
@@ -63,15 +71,15 @@ alias cdr="cd -"            # Go return to prev visited dir
 alias cdh='cd ~/LC'
 alias cdp='cd ~/LC/2_Areas/Programming_Projects'
 alias cds='cd ~/LC/2_Areas/Academics/AUI\ University/6th\ Semester'
-alias cddw="cd ~/Downloads" # Go to Downloads
-alias cdds="cd ~/Desktop"   # Go to Downloads
-alias cddc="cd ~/Documents" # Go to Downloads
+alias cddw="cd ~/Downloads" 
+alias cdds="cd ~/Desktop"   
+alias cddc="cd ~/Documents" 
 alias cdfh='open ~/LC'
 alias cdfp='open ~/LC/2_Areas/Programming_Projects'
 alias cdfs='open ~/LC/2_Areas/Academics/AUI\ University/6th\ Semester'
-alias cdfdw="open ~/Downloads" # Go to Downloads
-alias cdfds="open ~/Desktop"   # Go to Downloads
-alias cdfdc="open ~/Documents" # Go to Downloads
+alias cdfdw="open ~/Downloads" 
+alias cdfds="open ~/Desktop"   
+alias cdfdc="open ~/Documents"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."

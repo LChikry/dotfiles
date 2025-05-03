@@ -28,6 +28,7 @@ chmod +x install.sh
 7. Voila! Just wait from the script to finish; You might get asked to enter your machine password for sudo/root privileges, that's fine.
 
 ## Future Plans
+- Organize Word templates (naming, structure, etc) and creating a script for them
 - Integrate other cloud services into your Dotfiles process (Dropbox, Google Drive, etc.).
 - add vs code settings
 - add vs code plugins and their settings

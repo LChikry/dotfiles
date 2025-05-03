@@ -1,5 +1,6 @@
 ### Project Specifics ###
 .env
+word_templates/
 
 ## AWS User-specific
 .idea/**/aws.xml
