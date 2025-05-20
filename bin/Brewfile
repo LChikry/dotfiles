@@ -1,0 +1,174 @@
+############################################################################
+#                                    Tap                                   #
+############################################################################
+tap "homebrew/bundle"
+tap "homebrew/services"
+tap "mhaeuser/mhaeuser"
+
+
+
+############################################################################
+#                               Formulas                                   #
+############################################################################
+# Build tool for C and C++
+brew "cmake"
+# Cross-platform C and C++ unit testing framework for the 21st century
+brew "criterion"
+# GNU compiler collection
+brew "gcc"
+# Distributed revision control system
+brew "git"
+# UNIX Shell
+brew "zsh"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Better File Manager
+brew "superfile"
+# Object-relational database system
+brew "postgresql@17", restart_service: true, link: true
+# Internet file retriever
+brew "wget"
+# Better Git diff
+brew "git-delta"
+# Better ls
+brew "eza"
+# Convenient man page called tldr (tlrc in brew)
+brew "tlrc"
+# Better cd
+brew "zoxide"
+# Better search
+brew "fzf"
+# Python
+brew "python"
+# Battery controller
+brew "battery-toolkit"
+	# BatFi hidden free download link: https://files.micropixels.software/batfi/BatFi-latest.zip
+	# cask "aldente"
+
+
+
+#############################################################################
+#                                   Apps                                    #
+#############################################################################
+# PDFGear: best pdf tool  https://www.pdfgear.com/
+# Horo: best minimalist timer & countdown
+
+# Best way to drag and drop file
+	# Folder Hub: has better shortcuts
+	# cask "dropzone"
+# AeroSpace is an i3-like tiling window manager for macOS
+cask "aerospace"
+# Control your tools with a few keystrokes
+cask "raycast"
+# Hide menu bar apps
+# cask "jordanbaird-ice"
+# Favorite Mac Browser
+cask "arc"
+# Favorite Download Manager
+cask "free-download-manager"
+# Favorite Password Manager
+cask "bitwarden"
+# Favorite 2FA app
+cask "ente-auth"
+# Good calendar+task side-by-side
+cask "morgen"
+# Good task manager
+cask "todoist"
+# temporary long-lived emails
+cask "tempbox"
+# Downloading native macOS Telegram for newer features
+cask "telegram"
+# cask "telegram-desktop" # for some missing features
+# Whatsapp for desktop
+cask "whatsapp"
+# Favorite Media Player
+cask "elmedia-player"
+# Best screenshot app
+cask "shottr"
+# Free Video Downloader
+cask "4k-video-downloader+"
+# Customizable timing of breaks
+cask "time-out"
+# Grammar & Spell checker
+cask "grammarly-desktop"
+# OpenAi ChatGPT
+cask "chatgpt"
+# Free file archiver (i.e zip)
+cask "keka"
+# Better way to uninstall apps
+cask "appcleaner"
+# Favorite notetaking app based on markdown
+cask "obsidian"
+# Virtual Machine
+cask "vmware-fusion"
+# UTM: a machine simulator
+cask "utm"
+# Distribution of the Python and R programming languages for scientific computing
+cask "anaconda"
+# Best OpenJDK for LTS right now
+cask "temurin@21"
+# Favorite coding font
+cask "font-jetbrains-mono"
+# IntelliJ IDEA CE
+cask "intellij-idea-ce"
+# VS Code
+cask "visual-studio-code"
+cask "docker"
+
+
+
+#############################################################################
+#                              VS Code Plugins                              #
+#############################################################################
+vscode "adpyke.codesnap"
+vscode "asvetliakov.vscode-neovim"
+vscode "cardinal90.multi-cursor-case-preserve"
+vscode "davidanson.vscode-markdownlint"
+vscode "docker.docker"
+vscode "donjayamanne.githistory"
+vscode "ecmel.vscode-html-css"
+vscode "formulahendry.code-runner"
+vscode "hediet.vscode-drawio"
+vscode "hnw.vscode-auto-open-markdown-preview"
+vscode "monish.regexsnippets"
+vscode "ms-azuretools.vscode-docker"
+vscode "ms-kubernetes-tools.vscode-kubernetes-tools"
+vscode "ms-python.debugpy"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-toolsai.jupyter"
+vscode "ms-toolsai.jupyter-keymap"
+vscode "ms-toolsai.jupyter-renderers"
+vscode "ms-toolsai.vscode-jupyter-cell-tags"
+vscode "ms-toolsai.vscode-jupyter-slideshow"
+vscode "ms-vscode-remote.remote-containers"
+vscode "ms-vscode.cmake-tools"
+vscode "ms-vscode.cpptools"
+vscode "ms-vscode.cpptools-extension-pack"
+vscode "ms-vscode.cpptools-themes"
+vscode "ms-vscode.live-server"
+vscode "oderwat.indent-rainbow"
+vscode "pkief.material-icon-theme"
+vscode "redhat.java"
+vscode "redhat.vscode-yaml"
+vscode "streetsidesoftware.code-spell-checker"
+vscode "streetsidesoftware.code-spell-checker-arabic"
+vscode "streetsidesoftware.code-spell-checker-french"
+vscode "tamasfe.even-better-toml"
+vscode "teabyii.ayu"
+vscode "tomoki1207.pdf"
+vscode "twxs.cmake"
+vscode "usernamehw.errorlens"
+vscode "vexrobotics.vexcode"
+vscode "vexrobotics.vexfeedback"
+vscode "visualstudioexptteam.intellicode-api-usage-examples"
+vscode "visualstudioexptteam.vscodeintellicode"
+vscode "vscjava.vscode-gradle"
+vscode "vscjava.vscode-java-debug"
+vscode "vscjava.vscode-java-dependency"
+vscode "vscjava.vscode-java-pack"
+vscode "vscjava.vscode-java-test"
+vscode "vscjava.vscode-maven"
+vscode "wayou.vscode-todo-highlight"
+vscode "wix.vscode-import-cost"
+vscode "wware.snippet-creator"
