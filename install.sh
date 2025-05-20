@@ -1,7 +1,13 @@
 #!/usr/bin/env zsh
 
 # Ask for the administrator password upfront
+echo "requesting administrator privileges...."
 sudo -v
+
+real_path="${HOME}/LC/2_Areas/Programming_Projects/dotfiles"
+symlink_path="${HOME}/.dotfiles"
+ln -sf "$real_path" "$symlink_path"
+echo "Symlink created: $symlink_path -> $real_path"
 
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &

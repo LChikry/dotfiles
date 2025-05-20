@@ -1,5 +1,5 @@
 # Load dotfiles:
-for file in ~/.setup/dotfiles/.{aliases,other_files}; do
+for file in ~/.dotfiles/dotfiles/.{aliases,other_files}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
