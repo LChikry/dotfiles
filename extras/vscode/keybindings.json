@@ -38,8 +38,6 @@
 		"when": "neovim.mode == normal && (editorTextFocus || !inputFocus)"
 	},
 
-
-
 	// Side Bar Panel Toggling
 	{
 		"key": "space e", // open file explorer
@@ -79,7 +77,6 @@
 		"when": "neovim.mode == normal && (!editorTextFocus || !inputFocus) &&panelFocus"
 	},
 
-
 	// Coding
 	{
 		"key": "shift-j",
@@ -99,12 +96,12 @@
 	{
 		"key": "space c a",
 		"command": "editor.action.codeAction",
-		"when": "neovim.mode == normal && editorTextFocus"
+		"when": "neovim.mode == normal && editorTextFocus && !inputFocus"
 	},
 	{
 		"key": "space c r",
 		"command": "editor.action.rename",
-		"when": "neovim.mode == normal && editorTextFocus"
+		"when": "neovim.mode == normal && editorTextFocus && !inputFocus"
 	},
 	{
 		"key": "space c s",
@@ -117,8 +114,7 @@
 		"when": "neovim.mode == normal && (editorTextFocus || !inputFocus)"
 	},
 
-
-	// File Explorer 
+	// File Explorer
 	{
 		"key": "r",
 		"command": "renameFile",
@@ -169,7 +165,6 @@
 				"explorer.openAndPassFocus",
 				"workbench.action.closeOtherEditors"
 			]
-		
 		}
 	},
 	{

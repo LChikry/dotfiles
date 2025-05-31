@@ -6,7 +6,6 @@
 	"files.autoSave": "afterDelay",
 	"python.createEnvironment.trigger": "off",
 	"code-runner.languageIdToFileExtensionMap": {
-
 		"bat": ".bat",
 		"powershell": ".ps1",
 		"typescript": ".ts"
@@ -50,8 +49,6 @@
 		".gleam": "gleam run -m $fileNameWithoutExt"
 	},
 	"code-runner.executorMap": {
-
-
 		"javascript": "node",
 		"java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
 		"c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
@@ -107,7 +104,7 @@
 		"mojo": "mojo run",
 		"erlang": "escript",
 		"spwn": "spwn build",
-		"pkl": "cd $dir && pkl eval -f yaml $fileName -o $fileNameWithoutExt.yaml",
+		"pkl": "cd $dir && pkl eval -f yaml $fileName -o $fileNameWithoutExt.yaml"
 		// "gleam": "gleam run -m $fileNameWithoutExt"
 	},
 	"workbench.startupEditor": "none",
@@ -116,7 +113,6 @@
 	"editor.insertSpaces": false,
 	"editor.indentSize": "tabSize",
 	"editor.wordWrap": "wordWrapColumn",
-	"workbench.iconTheme": "ayu",
 	"workbench.colorTheme": "Ayu Dark Bordered",
 	"editor.fontFamily": "JetBrains Mono",
 	"editor.fontSize": 13.5,
@@ -126,9 +122,7 @@
 	"chat.commandCenter.enabled": false,
 	"editor.lineNumbers": "relative",
 	"files.encoding": "utf8",
-	"cSpell.userWords": [
-		"Zoxide"
-	],
+	"cSpell.userWords": ["Chikry", "Lahoucine", "Zoxide"],
 	"code-runner.runInTerminal": true,
 	"terminal.integrated.inheritEnv": false,
 	"explorer.confirmDelete": false,
@@ -137,4 +131,12 @@
 	"editor.tokenColorCustomizations": {},
 	"vexrobotics.vexcode.Project.Home": "~/Documents/vex-vscode-projects",
 	"vexrobotics.vexcode.Cpp.Sdk.Home": "~/Library/Application Support/Code/User/globalStorage/vexrobotics.vexcode/sdk/cpp",
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"prettier.tabWidth": 4,
+	"prettier.useTabs": true,
+	"editor.formatOnSave": true,
+	"editor.guides.bracketPairs": "active",
+	"editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+	"workbench.iconTheme": "vira-icons-ocean",
+	"symbols.hidesExplorerArrows": true
 }

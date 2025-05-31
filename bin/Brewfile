@@ -10,38 +10,22 @@ tap "mhaeuser/mhaeuser"
 ############################################################################
 #                               Formulas                                   #
 ############################################################################
-# Build tool for C and C++
-brew "cmake"
-# Cross-platform C and C++ unit testing framework for the 21st century
-brew "criterion"
-# GNU compiler collection
-brew "gcc"
-# Distributed revision control system
+brew "cmake" #build tool for C/C++
+brew "criterion" #unit testing library for C/C++
+brew "gcc" #C/C++ compiler
 brew "git"
-# UNIX Shell
 brew "zsh"
-# Ambitious Vim-fork focused on extensibility and agility
-brew "neovim"
-# Better File Manager
-brew "superfile"
-# Object-relational database system
+brew "neovim" #code editor
+brew "superfile" #file manager
 brew "postgresql@17", restart_service: true, link: true
-# Internet file retriever
-brew "wget"
-# Better Git diff
-brew "git-delta"
-# Better ls
-brew "eza"
-# Convenient man page called tldr (tlrc in brew)
-brew "tlrc"
-# Better cd
-brew "zoxide"
-# Better search
-brew "fzf"
-# Python
+brew "wget" # Internet file retriever
+brew "git-delta" #better git diff
+brew "eza" #better ls
+brew "tlrc" #short man page
+brew "zoxide" #better cd
+brew "fzf" 
 brew "python"
-# Battery controller
-brew "battery-toolkit"
+brew "battery-toolkit" # Battery controller
 	# BatFi hidden free download link: https://files.micropixels.software/batfi/BatFi-latest.zip
 	# cask "aldente"
 
@@ -53,65 +37,38 @@ brew "battery-toolkit"
 # PDFGear: best pdf tool  https://www.pdfgear.com/
 # Horo: best minimalist timer & countdown
 
-# Best way to drag and drop file
+# temporary place for drag and drop files
 	# Folder Hub: has better shortcuts
 	# cask "dropzone"
-# AeroSpace is an i3-like tiling window manager for macOS
-cask "aerospace"
-# Control your tools with a few keystrokes
-cask "raycast"
-# Hide menu bar apps
-# cask "jordanbaird-ice"
-# Favorite Mac Browser
-cask "arc"
-# Favorite Download Manager
+
+# cask "aerospace" #i3-like tiling+window manager
+cask "raycast" #better spotlight w/ app launcher and window manager
+# cask "jordanbaird-ice" #hide menu bar apps
+cask "arc" #browser
 cask "free-download-manager"
-# Favorite Password Manager
-cask "bitwarden"
-# Favorite 2FA app
-cask "ente-auth"
-# Good calendar+task side-by-side
-cask "morgen"
-# Good task manager
-cask "todoist"
-# temporary long-lived emails
-cask "tempbox"
-# Downloading native macOS Telegram for newer features
-cask "telegram"
-# cask "telegram-desktop" # for some missing features
-# Whatsapp for desktop
+cask "bitwarden" #Password Manager
+cask "ente-auth" #2FA app
+cask "morgen" #calendar
+cask "todoist" #task manager
+cask "tempbox" #temporary emails
+cask "telegram" #native macOS telegram app
+# cask "telegram-desktop" #non-native app with additional features
 cask "whatsapp"
-# Favorite Media Player
-cask "elmedia-player"
-# Best screenshot app
-cask "shottr"
-# Free Video Downloader
-cask "4k-video-downloader+"
-# Customizable timing of breaks
-cask "time-out"
-# Grammar & Spell checker
+cask "elmedia-player" #media player
+cask "shottr" #better screenshots
+cask "4k-video-downloader+" #video downloader
+cask "time-out" #sceen-eye breaks
 cask "grammarly-desktop"
-# OpenAi ChatGPT
-cask "chatgpt"
-# Free file archiver (i.e zip)
-cask "keka"
-# Better way to uninstall apps
-cask "appcleaner"
-# Favorite notetaking app based on markdown
-cask "obsidian"
-# Virtual Machine
+# cask "chatgpt" 
+cask "keka" #archiver
+cask "appcleaner" #better uninstaller
+cask "obsidian" #markdown notetaking app
 cask "vmware-fusion"
-# UTM: a machine simulator
-cask "utm"
-# Distribution of the Python and R programming languages for scientific computing
-cask "anaconda"
-# Best OpenJDK for LTS right now
-cask "temurin@21"
-# Favorite coding font
-cask "font-jetbrains-mono"
-# IntelliJ IDEA CE
+cask "utm" #another VM
+cask "anaconda" #python envirnments manager
+cask "temurin@21" #Best OpenJDK right now
+cask "font-jetbrains-mono" # coding font
 cask "intellij-idea-ce"
-# VS Code
 cask "visual-studio-code"
 cask "docker"
 
