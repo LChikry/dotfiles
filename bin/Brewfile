@@ -10,12 +10,15 @@ tap "mhaeuser/mhaeuser"
 ############################################################################
 #                               Formulas                                   #
 ############################################################################
-brew "cmake" #build tool for C/C++
-brew "criterion" #unit testing library for C/C++
-brew "gcc" #C/C++ compiler
 brew "git"
 brew "zsh"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+brew "starship" #terminal prompt
 brew "neovim" #code editor
+brew "gcc" #C/C++ compiler
+brew "cmake" #build tool for C/C++
+brew "criterion" #unit testing library for C/C++
 brew "superfile" #file manager
 brew "postgresql@17", restart_service: true, link: true
 brew "wget" # Internet file retriever
@@ -29,7 +32,7 @@ brew "battery-toolkit" # Battery controller
 	# BatFi hidden free download link: https://files.micropixels.software/batfi/BatFi-latest.zip
 	# cask "aldente"
 
-
+echo "source $(brew --prefix)/share/.zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
 
 #############################################################################
 #                                   Apps                                    #
@@ -41,15 +44,23 @@ brew "battery-toolkit" # Battery controller
 	# Folder Hub: has better shortcuts
 	# cask "dropzone"
 
-# cask "aerospace" #i3-like tiling+window manager
-cask "raycast" #better spotlight w/ app launcher and window manager
-# cask "jordanbaird-ice" #hide menu bar apps
+cask "font-jetbrains-mono"
+cask "font-jetbrains-mono-nerd-font"
+cask "wezterm" #terminal of choice
 cask "arc" #browser
-cask "free-download-manager"
 cask "bitwarden" #Password Manager
 cask "ente-auth" #2FA app
-cask "morgen" #calendar
+cask "raycast" #better spotlight w/ app launcher and window manager
 cask "todoist" #task manager
+cask "morgen" #calendar
+cask "anaconda" #python envirnments manager
+cask "temurin@21" #Best OpenJDK right now
+cask "intellij-idea-ce"
+cask "visual-studio-code"
+cask "free-download-manager"
+cask "obsidian" #markdown notetaking app
+# cask "aerospace" #i3-like tiling+window manager
+# cask "jordanbaird-ice" #hide menu bar apps
 cask "tempbox" #temporary emails
 cask "telegram" #native macOS telegram app
 # cask "telegram-desktop" #non-native app with additional features
@@ -62,14 +73,8 @@ cask "grammarly-desktop"
 # cask "chatgpt" 
 cask "keka" #archiver
 cask "appcleaner" #better uninstaller
-cask "obsidian" #markdown notetaking app
 cask "vmware-fusion"
 cask "utm" #another VM
-cask "anaconda" #python envirnments manager
-cask "temurin@21" #Best OpenJDK right now
-cask "font-jetbrains-mono" # coding font
-cask "intellij-idea-ce"
-cask "visual-studio-code"
 cask "docker"
 
 

@@ -87,8 +87,8 @@ alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 alias ls='ls -l'
 if command_exists eza; then
-    alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
-    alias lt="ls --tree --level=3"
+    alias ls="eza --color=always --grid --width=80 --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+    alias lt="ls --tree --level=2"
 
 fi
 alias la="ls -a"
@@ -98,6 +98,7 @@ alias la="ls -a"
 ###############################################################################
 #                              Editors & Languages                            #
 ###############################################################################
+alias q='exit'
 alias c='clear'
 alias clr='clear'
 if command_exists bat; then

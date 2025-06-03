@@ -1,16 +1,54 @@
 // Place your key bindings in this file to override the defaults
 [
-	// Navigation between tabs, panels, and files
+	// Complemented Neovim Keybindings (Areas out of Neovim Scope)
+
+	//////////// Command Pallets
 	{
-		"key": "tab",
-		"command": "workbench.action.nextEditorInGroup",
-		"when": "neovim.mode != insert && (editorTextFocus || !inputFocus)"
+		"key": "space f",
+		"command": "workbench.action.quickOpen",
+		"when": "!inputFocus && !editorTextFocus"
 	},
 	{
-		"key": "shift-tab",
-		"command": "workbench.action.previousEditorInGroup",
-		"when": "neovim.mode != insert  && (editorTextFocus || !inputFocus)"
+		"key": "space .",
+		"command": "workbench.action.showAllEditors",
+		"when": "!inputFocus && !editorTextFocus"
 	},
+	{
+		"key": "space c p",
+		"command": "workbench.action.showCommands",
+		"when": "!inputFocus && !editorTextFocus"
+	},
+
+	///////////// SideBar Keybindings
+	{
+		"key": "escape", // close any sideBar, except file explorer
+		"command": "workbench.action.toggleSidebarVisibility",
+		"when": "neovim.mode == normal && sideBarVisible && editorTextFocus"
+	},
+	{
+		"key": "space e",
+		"command": "runCommands",
+		"args": {
+			"commands": [
+				"workbench.action.toggleSidebarVisibility",
+				"workbench.files.action.focusFilesExplorer"
+			]
+		},
+		"when": "!inputFocus && !editorTextFocus"
+	},
+	{
+		"key": "space a", // open extensions
+		"command": "runCommands",
+		"args": {
+			"commands": [
+				"workbench.action.toggleSidebarVisibility",
+				"workbench.extensions.action.focusExtensionsView"
+			]
+		},
+		"when": "!inputFocus && !editorTextFocus"
+	},
+
+	// Panes Navigation (Out of Neovim Scope)
 	{
 		"key": "ctrl-h",
 		"command": "workbench.action.navigateLeft"
@@ -26,160 +64,5 @@
 	{
 		"key": "ctrl-j",
 		"command": "workbench.action.navigateDown"
-	},
-	{
-		"key": "space ,", // show & search files opened in tabs
-		"command": "workbench.action.showAllEditors",
-		"when": "neovim.mode != insert && (editorTextFocus || !inputFocus)"
-	},
-	{
-		"key": "space space", // show & search all files in project
-		"command": "workbench.action.quickOpen",
-		"when": "neovim.mode == normal && (editorTextFocus || !inputFocus)"
-	},
-
-	// Side Bar Panel Toggling
-	{
-		"key": "space e", // open file explorer
-		"command": "runCommands",
-		"args": {
-			"commands": [
-				"workbench.action.toggleSidebarVisibility",
-				"workbench.files.action.focusFilesExplorer"
-			]
-		},
-		"when": "neovim.mode == normal && (editorTextFocus || !inputFocus ||sideBarFocus) && !filesExplorerFocus"
-	},
-	{
-		"key": "space e", // close file explorer
-		"command": "workbench.action.toggleSidebarVisibility",
-		"when": "sideBarFocus && !inputFocus && filesExplorerFocus"
-	},
-	{
-		"key": "space a", // open extensions
-		"command": "runCommands",
-		"args": {
-			"commands": [
-				"workbench.action.toggleSidebarVisibility",
-				"workbench.extensions.action.focusExtensionsView"
-			]
-		},
-		"when": "neovim.mode == normal && (editorTextFocus || !inputFocus || sideBarFocus)"
-	},
-	{
-		"key": "escape", // close any sideBar, except file explorer
-		"command": "workbench.action.toggleSidebarVisibility",
-		"when": "neovim.mode == normal && (!editorTextFocus || !inputFocus) &&sideBarFocus && !explorerViewletVisible"
-	},
-	{
-		"key": "escape", // close panel that has output etc
-		"command": "workbench.action.closePanel",
-		"when": "neovim.mode == normal && (!editorTextFocus || !inputFocus) &&panelFocus"
-	},
-
-	// Coding
-	{
-		"key": "shift-j",
-		"command": "editor.action.moveLinesDownAction",
-		"when": "neovim.mode == visual && editorTextFocus"
-	},
-	{
-		"key": "shift-k",
-		"command": "editor.action.moveLinesUpAction",
-		"when": "neovim.mode == visual && editorTextFocus"
-	},
-	{
-		"key": "shift-k",
-		"command": "editor.action.showHover",
-		"when": "neovim.mode == normal && editorTextFocus"
-	},
-	{
-		"key": "space c a",
-		"command": "editor.action.codeAction",
-		"when": "neovim.mode == normal && editorTextFocus && !inputFocus"
-	},
-	{
-		"key": "space c r",
-		"command": "editor.action.rename",
-		"when": "neovim.mode == normal && editorTextFocus && !inputFocus"
-	},
-	{
-		"key": "space c s",
-		"command": "workbench.action.gotoSymbol",
-		"when": "neovim.mode == normal && (editorTextFocus || !inputFocus)"
-	},
-	{
-		"key": "space b d",
-		"command": "workbench.action.closeActiveEditor",
-		"when": "neovim.mode == normal && (editorTextFocus || !inputFocus)"
-	},
-
-	// File Explorer
-	{
-		"key": "r",
-		"command": "renameFile",
-		"when": "filesExplorerFocus && foldersViewVisible &&!explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-	},
-	{
-		"key": "y",
-		"command": "filesExplorer.copy",
-		"when": "filesExplorerFocus && foldersViewVisible &&!explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-	},
-	{
-		"key": "p",
-		"command": "filesExplorer.paste",
-		"when": "filesExplorerFocus && foldersViewVisible &&!explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-	},
-	{
-		"key": "x",
-		"command": "filesExplorer.cut",
-		"when": "filesExplorerFocus && foldersViewVisible &&!explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-	},
-	{
-		"key": "d",
-		"command": "deleteFile",
-		"when": "filesExplorerFocus && foldersViewVisible &&!explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-	},
-	{
-		"key": "a",
-		"command": "explorer.newFile",
-		"when": "filesExplorerFocus && foldersViewVisible &&!explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-	},
-	{
-		"key": "shift-a",
-		"command": "explorer.newFolder",
-		"when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-	},
-	{
-		"key": "s",
-		"command": "explorer.openToSide",
-		"when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-	},
-	{
-		"key": "shift-s",
-		"command": "runCommands",
-		"when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus",
-		"args": {
-			"commands": [
-				"workbench.action.splitEditorDown",
-				"explorer.openAndPassFocus",
-				"workbench.action.closeOtherEditors"
-			]
-		}
-	},
-	{
-		"key": "enter",
-		"command": "explorer.openAndPassFocus",
-		"when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-	},
-	{
-		"key": "enter",
-		"command": "explorer.openAndPassFocus",
-		"when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsFolder && !inputFocus"
-	},
-	{
-		"key": "enter",
-		"command": "list.toggleExpand",
-		"when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && explorerResourceIsFolder && !inputFocus"
 	}
 ]

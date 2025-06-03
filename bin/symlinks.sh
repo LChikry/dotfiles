@@ -18,6 +18,7 @@ create_symlink() {
     done
 }
 
+# for files in different specific places
 extras_dir="${HOME}/.dotfiles/extras"
 for item in "${extras_dir}"/*; do
     [[ -d "$item" ]] || continue
@@ -36,10 +37,11 @@ for item in "${extras_dir}"/*; do
     esac
 done
 
+# for files in HOME directory
 dotfiles_dir="${HOME}/.dotfiles/dotfiles"
 create_symlink "${dotfiles_dir}" "${HOME}"
 
-# Symlinking the entire directory with exaxt name
+# Symlinking the entire directory with exact name for .config directory in the HOME directory
 mkdir -p "${HOME}/.config"
 configdir="${HOME}/.dotfiles/config"
 for item in "${configdir}"/*; do
