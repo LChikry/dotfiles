@@ -1,6 +1,6 @@
 # Dotfiles
 
-This repository holds my personal dotfiles and config files for seamless setup machine. This files can easily be setup using the `install.sh` script wihch uses various scripts in the `script` folder (directory) to achieve this task.jjkkkkkkkkkkkkkkjjjjjjjkjkjk
+This repository holds my personal dotfiles and config files for seamless setup machine. This files can easily be setup using the `install.sh` script which uses various scripts in the `script` folder (directory) to achieve this task.
 
 ## How to Personalize this Repo
 
@@ -10,7 +10,7 @@ In each file, you will find comments describing what the line or block of lines 
 
 Those two files are responsible of installing applications you specified in the Brewfile and apply all the changes you did in this repo to your machine. Also, keep in mind that `install.sh` file should be updated according to the scripts you will add or remove; For now, it calls only the scripts that exist in the `bin` directory.
 
-To add a config file, you need to create a directory that has the name of the app it belogs to under the config directory. In contrast, if you want to add a dotfile, just add it directly under the dotfiles directory.
+To add a config file, you need to create a directory that has the name of the app it belongs to under the config directory. In contrast, if you want to add a dotfile, just add it directly under the dotfiles directory.
 
 ## How to Apply this Configuration
 
@@ -37,9 +37,9 @@ chmod +x install.sh
 
 ## Future Plans
 
-- add raycast settings
-- Integrate other cloud services into your Dotfiles process (Dropbox, Google Drive, etc.).
-- add intellij idea settings
-- add intellij plugins and their settings
-- set default apps (browser, terminal, media plater, editor, pdf, etc)
-- support different os/distros (macos, ubuntu, arch)
+-   add raycast settings
+-   Integrate other cloud services into your Dotfiles process (Dropbox, Google Drive, etc.).
+-   add intellij idea settings
+-   add intellij plugins and their settings
+-   set default apps (browser, terminal, media plater, editor, pdf, etc)
+-   support different os/distros (macos, ubuntu, arch)
