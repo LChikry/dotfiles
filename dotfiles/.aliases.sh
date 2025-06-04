@@ -21,13 +21,15 @@ gac() {
 }
 alias gca='git commit --amend --no-edit'
 alias gcam='git commit --amend -m'
-alias gcaf='gaa && git commit --amend --no-edit'
-alias gcafm='gaa && gcam'
+alias gaaca='gaa && git commit --amend --no-edit'
+alias gaacam='gaa && gcam'
 alias gpf='git pull --ff-only'
 alias gpr='git pull --rebase'
 alias gp='git push'
-alias gg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all"
-alias gg2="git log --graph --date-order --date=short \--pretty=format:'%C(auto)%h%d %C(reset)%s %C(bold blue)%ce %C(reset)%C(green)%cr (%cd)'"
+
+alias ggr="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --since='2 weeks ago' --all"
+alias ggo="git log --graph --abbrev-commit --decorate --date=short --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ad)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --until='2 weeks ago' --all"
+alias gg='ggr && ggo'
 # alias gw='git switch'
 # alias gwm='gw main'
 # alias gwd='gw dev'
@@ -59,10 +61,10 @@ alias gg2="git log --graph --date-order --date=short \--pretty=format:'%C(auto)%
 ###############################################################################
 #                             Navigation & Search                             #
 ###############################################################################
-fs() {
-    aerospace list-windows --all | \
-    fzf --bind 'enter:execute(bash -c "aerospace focus --window-id {1}")+abort'
-}
+# fs() {
+#     aerospace list-windows --all | \
+#     fzf --bind 'enter:execute(bash -c "aerospace focus --window-id {1}")+abort'
+# }
 
 if command_exists z; then
   alias cd='z'
@@ -118,11 +120,11 @@ alias pip='pip3'
 #                                    Packages                                 #
 ###############################################################################
 if command_exists brew; then
-  alias hbs="brew search"
-  alias hbi="brew install"
-  alias hbl="brew list"
-  alias hbu="brew uninstall"
-  alias hbn="brew info"
+  alias bi="brew install"
+  alias bu="brew uninstall"
+  alias bup='brew update; brew upgrade; brew upgrade --cask; brew cleanup'
+  alias bs="brew search"
+  alias bl="brew list"
+  alias bh="brew info"
   # Update/upgrade Homebrew and their installed packages
-  alias hbup='brew update; brew upgrade; brew upgrade --cask; brew cleanup'
 fi
