@@ -72,11 +72,11 @@ alias cdh='cd ~/LC'
 alias cdp='cd ~/LC/2_Areas/Programming_Projects'
 alias cds='cd ~/LC/2_Areas/Academics/AUI\ University/6th\ Semester'
 alias cddw="cd ~/Downloads" 
-alias cdds="cd ~/Desktop"   
+alias cddk="cd ~/Desktop"   
 alias cddc="cd ~/Documents" 
 alias cdfh='open ~/LC'
 alias cdfp='open ~/LC/2_Areas/Programming_Projects'
-alias cdfs='open ~/LC/2_Areas/Academics/AUI\ University/6th\ Semester'
+alias cdfs='open ~/LC/2_Areas/Academics/AUI\ University/7th\ Summer'
 alias cdfdw="open ~/Downloads" 
 alias cdfds="open ~/Desktop"   
 alias cdfdc="open ~/Documents"
@@ -109,6 +109,7 @@ if command_exists nvim; then
   alias vi='nvim'
 fi
 alias python='python3'
+alias py='python3'
 alias pip='pip3'
 
 
@@ -123,6 +124,5 @@ if command_exists brew; then
   alias hbu="brew uninstall"
   alias hbn="brew info"
   # Update/upgrade Homebrew and their installed packages
-  alias update_brew='brew update; brew upgrade; brew upgrade --cask; brew cleanup'
+  alias hbup='brew update; brew upgrade; brew upgrade --cask; brew cleanup'
 fi
-

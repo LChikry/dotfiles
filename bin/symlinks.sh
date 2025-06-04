@@ -45,7 +45,10 @@ create_symlink "${dotfiles_dir}" "${HOME}"
 mkdir -p "${HOME}/.config"
 configdir="${HOME}/.dotfiles/config"
 for item in "${configdir}"/*; do
-    [[ -d "$item" ]] || continue
+    if [[ "$filename" == "." || "$filename" == ".." || "$filename" == ".DS_Store" ]]; then
+        continue
+    fi
+
 	# Get the directory name without the path
 	dirname=$(basename "$item")
 

@@ -25,4 +25,15 @@ for script in ./bin/*.sh; do
     fi
 done
 
+# Running apple specific scripts
+for script in ./bin/*.applescript; do
+    if [[ -f "$script" ]]; then
+        echo "Executing $script..."
+        osascript "$script"
+    else
+        echo "Skipping $script (not a file)."
+    fi
+done
+
+
 echo "Installation Complete!"
