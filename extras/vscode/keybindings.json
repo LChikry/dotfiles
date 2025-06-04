@@ -2,7 +2,12 @@
 [
 	// Complemented Neovim Keybindings (Areas out of Neovim Scope)
 
-	//////////// Command Pallets
+	//////////// Editors & Tabs
+	{
+		"key": "space c p",
+		"command": "workbench.action.showCommands",
+		"when": "!inputFocus && !editorTextFocus"
+	},
 	{
 		"key": "space f",
 		"command": "workbench.action.quickOpen",
@@ -14,12 +19,39 @@
 		"when": "!inputFocus && !editorTextFocus"
 	},
 	{
-		"key": "space c p",
-		"command": "workbench.action.showCommands",
+		"key": "space tab",
+		"command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+		"when": "!inputFocus && !editorTextFocus && !activeEditorGroupEmpty"
+	},
+	{
+		"key": "space q",
+		"command": "workbench.action.closeActiveEditor",
 		"when": "!inputFocus && !editorTextFocus"
 	},
 
-	///////////// SideBar Keybindings
+	/////////// Panes Navigation (Out of Neovim Scope)
+	{
+		"key": "ctrl-h",
+		"command": "workbench.action.navigateLeft",
+		"when": "!editorTextFocus"
+	},
+	{
+		"key": "ctrl-l",
+		"command": "workbench.action.navigateRight",
+		"when": "!editorTextFocus"
+	},
+	{
+		"key": "ctrl-k",
+		"command": "workbench.action.navigateUp",
+		"when": "!editorTextFocus"
+	},
+	{
+		"key": "ctrl-j",
+		"command": "workbench.action.navigateDown",
+		"when": "!editorTextFocus"
+	},
+
+	//////////// SideBar Keybindings
 	{
 		"key": "escape", // close any sideBar, except file explorer
 		"command": "workbench.action.toggleSidebarVisibility",
@@ -46,23 +78,5 @@
 			]
 		},
 		"when": "!inputFocus && !editorTextFocus"
-	},
-
-	// Panes Navigation (Out of Neovim Scope)
-	{
-		"key": "ctrl-h",
-		"command": "workbench.action.navigateLeft"
-	},
-	{
-		"key": "ctrl-l",
-		"command": "workbench.action.navigateRight"
-	},
-	{
-		"key": "ctrl-k",
-		"command": "workbench.action.navigateUp"
-	},
-	{
-		"key": "ctrl-j",
-		"command": "workbench.action.navigateDown"
 	}
 ]

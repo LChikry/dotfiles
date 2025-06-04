@@ -1,10 +1,18 @@
 local keymap = vim.keymap.set
 
 -- Universal Keybinding that Are Complemented By VS Code Keybinding
-------------- Command Pallets
+------------- Editors & Tabs
+keymap({"n", "v"}, "<leader>cp", "<cmd>lua require('vscode').action('workbench.action.showCommands')<CR>")
 keymap({"n", "v"}, "<leader>f", "<cmd>lua require('vscode').action('workbench.action.quickOpen')<CR>")
 keymap({"n", "v"}, "<leader>.", "<cmd>lua require('vscode').action('workbench.action.showAllEditors')<CR>")
-keymap({"n", "v"}, "<leader>cp", "<cmd>lua require('vscode').action('workbench.action.showCommands')<CR>")
+keymap({"n", "v"}, "<leader><Tab>", "<cmd>lua require('vscode').action('workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup')<CR>")
+--- space q keymap is in the general keymaps file
+
+-------------- Panes Navigation
+keymap({"n", "v"}, "<C-h>", "<cmd>lua require('vscode').action('workbench.action.navigateLeft')<CR>")
+keymap({"n", "v"}, "<C-l>", "<cmd>lua require('vscode').action('workbench.action.navigateRight')<CR>")
+keymap({"n", "v"}, "<C-k>", "<cmd>lua require('vscode').action('workbench.action.navigateUp')<CR>")
+keymap({"n", "v"}, "<C-j>", "<cmd>lua require('vscode').action('workbench.action.navigateDown')<CR>")
 
 -------------- SideBar Keybindings
 keymap({"n", "v"}, "<leader>e", function()
@@ -27,6 +35,7 @@ keymap({"n", "v"}, "<leader>a", function()
         }
     })
 end)
+
 
 
 -- Coding Keymaps
