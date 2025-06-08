@@ -8,8 +8,6 @@ command_exists() {
 ###############################################################################
 #                                       GIT                                   #
 ###############################################################################
-alias gf='git fetch'
-alias gs='git status'
 alias ga='git add'
 alias gaa='ga -A'
 alias gc='git commit -m'
@@ -21,8 +19,19 @@ gac() {
 }
 alias gca='git commit --amend --no-edit'
 alias gcam='git commit --amend -m'
-alias gaaca='gaa && git commit --amend --no-edit'
+alias gaaca='gaa && gca'
 alias gaacam='gaa && gcam'
+gaca() {
+    ga "$@" && gca
+}
+gacam() {
+    local message="$1"
+    shift
+    ga "$@" && gcam "$message"
+}
+
+alias gs='git status'
+alias gf='git fetch'
 alias gpf='git pull --ff-only'
 alias gpr='git pull --rebase'
 alias gp='git push'
@@ -30,24 +39,32 @@ alias gp='git push'
 alias ggr="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --since='2 weeks ago' --all"
 alias ggo="git log --graph --abbrev-commit --decorate --date=short --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ad)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --until='2 weeks ago' --all"
 alias gg='ggr && ggo'
+
+
+alias gdws='git diff'
+alias gdsws='gdws --staged'
+
+alias gsd='gdws --stat'
+alias gsds='gsd --staged'
+
+alias gd='git diff -w'
+alias gds='gd --staged'
+alias gdw='gdws --word-diff'
+alias gdsw='gdw --staged'
+alias gdf='gd --no-index'
+
+# - git swh = git show -w HEAD
 # alias gw='git switch'
 # alias gwm='gw main'
 # alias gwd='gw dev'
 # - git fop = git fetch origin --prune
 # - git mofo = git merge origin/master --ff-only
-# - git edit = git commit --amend
 # - git forgot = git edit --no-edit
-# - git hist = git log --one-line -10
-# - git dw = git diff -w
-# - git dws = git dw --staged
-# - git swh = git show -w HEAD
 # alias gco='git checkout'
 # alias gb='git branch'
 # alias gba='git branch --all'
 # alias gbd='git branch -D'
 # alias gcp='git cherry-pick'
-# alias gd='git diff -w'
-# alias gds='git diff -w --staged'
 # alias grs='git restore --staged'
 # alias gst='git rev-parse --git-dir > /dev/null 2>&1 && git status || exa'
 # alias gu='git reset --soft HEAD~1'
