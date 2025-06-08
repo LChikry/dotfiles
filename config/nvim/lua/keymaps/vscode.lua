@@ -39,12 +39,11 @@ end)
 
 
 -- Coding Keymaps
-keymap({"n", "v"}, "<leader>=", "<cmd>lua require('vscode').action('workbench.action.toggleCenteredLayout')<CR>")
-keymap({"n", "v"}, "<leader>rp", "<cmd>lua require('vscode').action('code-runner.run')<CR>")
-keymap({"n", "v"}, "<S-k>", "<cmd>lua require('vscode').action('editor.action.quickFix')<CR>")
-keymap({"n", "v"}, "gs", "<cmd>lua require('vscode').action('workbench.action.gotoSymbol')<CR>")
-keymap({"n", "v"}, "<leader>b", "<cmd>lua require('vscode').action('editor.debug.action.toggleBreakpoint')<CR>")
-
+keymap("n", "<leader>=", "<cmd>lua require('vscode').action('workbench.action.toggleCenteredLayout')<CR>")
+keymap("n", "<leader>rp", "<cmd>lua require('vscode').action('code-runner.run')<CR>")
+keymap("n", "<S-k>", "<cmd>lua require('vscode').action('editor.action.quickFix')<CR>")
+keymap("n", "gs", "<cmd>lua require('vscode').action('workbench.action.gotoSymbol')<CR>")
+keymap("n", "<leader>b", "<cmd>lua require('vscode').action('editor.debug.action.toggleBreakpoint')<CR>")
 
 -- Terminal Keymaps
 keymap({"n", "v"}, "<leader>t", "<cmd>lua require('vscode').action('workbench.action.terminal.toggleTerminal')<CR>")
