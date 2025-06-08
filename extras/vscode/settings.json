@@ -164,7 +164,6 @@
 		"opacity": 0.95,
 		"vibrancy": "under-window"
 	},
-	"workbench.iconTheme": "symbols",
 	"terminal.external.osxExec": "WezTerm.app",
 	"workbench.editor.centeredLayoutAutoResize": true,
 	"workbench.editor.centeredLayoutFixedWidth": true,
@@ -174,5 +173,6 @@
 	"terminal.integrated.cursorStyle": "block",
 	"terminal.integrated.cursorStyleInactive": "outline",
 	"terminal.integrated.cursorBlinking": true,
-	"workbench.editor.showTabs": "none"
+	"workbench.editor.showTabs": "none",
+	"workbench.iconTheme": "symbols"
 }
