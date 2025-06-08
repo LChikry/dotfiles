@@ -17,6 +17,9 @@ brew "zsh-syntax-highlighting"
 brew "starship" #terminal prompt
 brew "neovim" #code editor
 brew "gcc" #C/C++ compiler
+brew "python"
+brew "lua"
+brew "node@22" # LTS version
 brew "cmake" #build tool for C/C++
 brew "criterion" #unit testing library for C/C++
 brew "superfile" #file manager
@@ -27,7 +30,6 @@ brew "eza" #better ls
 brew "tlrc" #short man page
 brew "zoxide" #better cd
 brew "fzf" 
-brew "python"
 brew "battery-toolkit" # Battery controller
 	# BatFi hidden free download link: https://files.micropixels.software/batfi/BatFi-latest.zip
 	# cask "aldente"
