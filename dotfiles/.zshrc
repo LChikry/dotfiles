@@ -1,29 +1,9 @@
+# Fixing the Starship Newline Problem
+precmd() { precmd() { echo "" } }
+alias clear="precmd() { precmd() { echo } } && clear"
 
-# Fixing the added new line at terminal launch
-PROMPT_NEEDS_NEWLINE=false
-precmd() {
-    if [[ "$PROMPT_NEEDS_NEWLINE" == true ]]; then
-        echo
-    fi
-    PROMPT_NEEDS_NEWLINE=true
-}
-clear() {
-    PROMPT_NEEDS_NEWLINE=false
-    command clear
-}
-
+# Function for source (no alias needed)
 eval "$(starship init zsh)" # terminal prompt
-#emit 1st empty line by starship
-# precmd() {
-#     last_command=$(history | tail -n2 | head -n1 | sed 's/^[ ]*[0-9]*[ ]*//')
-#     if [ "$last_command" = "clear" ] || [ "$last_command" = "c" ] || [ "$last_command" = "clr" ]; then
-#         return
-#     fi
-
-#     precmd() {
-#         echo
-#     }
-# }
 
 # Load dotfiles
 for file in ~/.dotfiles/dotfiles/.{aliases.sh,zshrc_profile}; do

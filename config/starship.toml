@@ -1,141 +1,199 @@
-# Get editor completions based on the config schema
-"$schema" = 'https://starship.rs/config-schema.json'
-
-format = """
-$username\
-$hostname\
-$localip\
-$shlvl\
-$singularity\
-$kubernetes\
-$directory\
-$vcsh\
-$fossil_branch\
-$fossil_metrics\
-$git_branch\
-$git_commit\
-$git_state\
-$git_metrics\
-$git_status\
-$hg_branch\
-$pijul_channel\
-$docker_context\
-$package\
-$c\
-$cmake\
-$cobol\
-$daml\
-$dart\
-$deno\
-$dotnet\
-$elixir\
-$elm\
-$erlang\
-$fennel\
-$gleam\
-$golang\
-$guix_shell\
-$haskell\
-$haxe\
-$helm\
-$java\
-$julia\
-$kotlin\
-$gradle\
-$lua\
-$nim\
-$nodejs\
-$ocaml\
-$opa\
-$perl\
-$php\
-$pulumi\
-$purescript\
-$python\
-$quarto\
-$raku\
-$rlang\
-$red\
-$ruby\
-$rust\
-$scala\
-$solidity\
-$swift\
-$terraform\
-$typst\
-$vlang\
-$vagrant\
-$zig\
-$buf\
-$nix_shell\
-$conda\
-$meson\
-$spack\
-$memory_usage\
-$aws\
-$gcloud\
-$openstack\
-$azure\
-$nats\
-$direnv\
-$env_var\
-$mise\
-$crystal\
-$custom\
-$sudo\
-$cmd_duration\
-$line_break\
-$jobs\
-$battery\
-$time\
-$status\
-$os\
-$container\
-$netns\
-$shell\
-$character"""
-
 add_newline = false
+format = """
+[╭](fg:separator)\
+$sudo\
+$status\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$fill\
+$nodejs\
+${custom.react}\
+$conda\
+$python\
+$java\
+$lua\
+$c\
+$dotnet\
+$cmd_duration\
+$time\
+$line_break\
+$character\
+"""
+
+
+###############################################################
+# Pallette
+#########################################################################
+palette = "default"
+[palettes.default]
+prompt_ok  = "#63677d"
+prompt_err = "#db5661"
+background = "#44475A"
+icon       = "#1c232d"
+icon_white = "#F5F5F5"
+# separator  = "#E9EAFB"
+separator  = "#44475A"
+
+sudo       = "#FFFF00"
+status     = "#e23140"
+hostname   = "#FFD43B"
+directory  = "#E9EAFB"
+duration   = "#e26f31"
+git_branch = "#31e268"
+git_status = "#31e268"
+
+node_js = "#12952E"
+dotnet = "#BD93F9"
+python = "#4B8BBE"
+conda = "#0cbd45"
+java = "#ED8B00"
+clang = '#00599C'
+lua = "#152885"
+react = "#0188c7"
+
+
+###############################################################
+# User & Machine
+#########################################################################
+[character]
+format = "[╰$symbol](fg:separator) "
+success_symbol = "[](fg:prompt_ok)"
+error_symbol = "[](fg:prompt_err)"
+
+[sudo]
+format = "[─](fg:separator)[](fg:sudo)[$symbol](fg:icon bg:sudo)[](fg:sudo)"
+symbol = ""
+disabled = false
+
+[status]
+format = "[─](fg:separator)[](fg:status)[](fg:icon bg:status)[](fg:status bg:background)[ $status](bg:background)[](fg:background)"
+pipestatus = true
+pipestatus_separator = "-"
+pipestatus_segment_format = "$status"
+pipestatus_format = "[─](fg:separator)[](fg:status)[](fg:icon bg:status)[](fg:status bg:background)[ $pipestatus](bg:background)[](fg:background)"
+disabled = false
 
 [hostname]
-ssh_only = true
-ssh_symbol = " "
-format = '[$hostname](bold yellow) 󰌷  '
-disabled = false
+format = "[─](fg:separator)[](fg:hostname)[](fg:icon_white bg:hostname)[](fg:hostname bg:background)[ $hostname](bg:background)[](fg:background)"
 
 [directory]
-truncation_symbol = '󰮍 '
-read_only_style = '197'
-read_only = '  '
-format = '[$path]($style)[$read_only]($read_only_style) '
+format = "[─](fg:separator)[](fg:directory)[󰀵](fg:icon bg:directory)[](fg:directory bg:background)[ $read_only$truncation_symbol$path](bg:background)[](fg:background)"
+truncate_to_repo = false
+# truncation_length = 0
+truncation_symbol = "󰉕"
+read_only = "󱃬"
+
+[directory.substitutions]
+"Documents" = "󰈙"
+"Downloads" = ""
+"Music" = "󰝚"
+"Pictures" = ""
+"~/LC/2_Areas/Academics" = "󰑴"
+"~/LC/2_Areas/Programming_Projects" = "󰲋"
+
+# Alpine = ''
+# Amazon = ''
+# Android = ''
+# Arch = ''
+# CentOS = ''
+# Debian = ''
+# EndeavourOS = ''
+# Fedora = ''
+# FreeBSD = ''
+# Garuda = ''
+# Gentoo = ''
+# Linux = ''
+# Macos = ''
+# Manjaro = ''
+# Mariner = ''
+# Mint = ''
+# NetBSD = ''
+# NixOS = ''
+# OpenBSD = ''
+# OpenCloudOS = ''
+# openEuler = ''
+# openSUSE = ''
+# OracleLinux = '⊂⊃'
+# Pop = ''
+# Raspbian = ''
+# Redhat = ''
+# RedHatEnterprise = ''
+# Solus = ''
+# SUSE = ''
+# Ubuntu = ''
+# Unknown = ''
+# Windows = ''
 
 
-[os]
+###############################################################
+# Technologies 
+#########################################################################
+[git_branch]
+format = "[─](fg:separator)[](fg:git_branch)[$symbol](fg:icon bg:git_branch)[](fg:git_branch bg:background)[ $branch](bg:background)"
+symbol = ""
+
+[git_status]
+format = "[](fg:background bg:git_status)[$all_status$ahead_behind](fg:icon bg:git_status)[](fg:git_status)"
+
+[nodejs]
+format = '[─](fg:separator)[](fg:node_js)[$symbol](fg:icon_white bg:node_js)[](fg:node_js bg:background)[ $version](bg:background)[](fg:background)'
+symbol = "󰎙"
+version_format = "${major}.${minor}"
+
+[custom.react]
+command = "grep '\"react\":' package.json | sed -E 's/.*\"react\": \"(\\^|~|>=)?([0-9]+\\.[0-9]+)(\\.[0-9]+)?\"[,]?.*$/\\2/' 2>/dev/null"
+format = '[─](fg:separator)[](fg:react)[$symbol](fg:icon_white bg:react)[](fg:react bg:background)[ $output](bg:background)[](fg:background)'
+symbol = ""
+detect_files = [ "package.json" ]
+detect_extensions = ["jsx", "tsx"]
+when = "vite"
 disabled = false
-format = '[$symbol](bold white) '   
 
-[os.symbols]
-Windows = "󰍲"
-Ubuntu = "󰕈"
-Raspbian = "󰐿"
-Mint = "󰣭"
-Macos = "󰀵"
-Manjaro = ""
-Linux = "󰌽"
-Fedora = "󰣛"
-Alpine = ""
-Arch = "󰣇"
-Artix = "󰣇"
-CentOS = ""
-Debian = "󰣚"
-Redhat = "󱄛"
-RedHatEnterprise = "󱄛"
-Pop = ""
+[python]
+format = '[─](fg:separator)[](fg:python)[$symbol](fg:icon bg:python)[](fg:python bg:background)[ $version](bg:background)[](fg:background)'
+symbol = ""
+version_format = "${major}.${minor}"
 
-# # Disable the package module, hiding it from the prompt completely
-# [package]
-# disabled = true
+[conda]
+format = '[─](fg:separator)[](fg:conda)[$symbol](fg:icon bg:conda)[](fg:conda bg:background)[ $environment](bg:background)[](fg:background)'
+symbol = "🅒"
 
-# [directory]
-# truncation_length = 5
-# format = "[$path]($style)[$lock_symbol]($lock_style)"
+[java]
+format = '[─](fg:separator)[](fg:java)[$symbol](fg:icon_white bg:java)[](fg:java bg:background)[ $version](bg:background)[](fg:background)'
+symbol = ""
+version_format = "${major}.${minor}"
+
+[c]
+format = '[─](fg:separator)[](fg:clang)[$symbol](fg:icon_white bg:clang)[](fg:clang bg:background)[ $version](bg:background)[](fg:background)'
+symbol = ""
+version_format = "${major}.${minor}"
+
+[lua]
+format = '[─](fg:separator)[](fg:lua)[$symbol](fg:icon_white bg:lua)[](fg:lua bg:background)[ $version](bg:background)[](fg:background)'
+symbol = ""
+version_format = "${major}.${minor}"
+
+[dotnet]
+format = '[─](fg:separator)[](fg:dotnet)[$symbol](fg:icon bg:dotnet)[](fg:dotnet bg:background)[ $version](bg:background)[](fg:background)'
+symbol = ""
+version_format = "${major}.${minor}"
+
+
+###############################################################
+# Terminal 
+#########################################################################
+[fill]
+symbol = '─'
+style = 'fg:separator'
+disabled = true
+
+[cmd_duration]
+format = "[─](fg:separator)[](fg:duration)[󱐋](fg:icon bg:duration)[](fg:duration bg:background)[ $duration](bg:background)[](fg:background)"
+min_time = 1500 # milliseconds
+
+[time]
+format = "[─](fg:separator)[](fg:duration)[󰥔](fg:icon bg:duration)[](fg:duration bg:background)[ $time](bg:background)[](fg:background)"
+time_format = '%H:%M'
+disabled = true

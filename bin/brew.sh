@@ -73,3 +73,6 @@ if [[ ":$PATH:" != *":/opt/homebrew/bin:"* && ":$PATH:" != *":/usr/local/bin:"* 
 else
     echo "Homebrew Python path is already set in PATH."
 fi
+
+# remove the prompt of conda since it is done by Starship
+conda config --set changeps1 False
