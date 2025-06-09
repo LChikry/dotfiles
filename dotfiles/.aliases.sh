@@ -1,11 +1,4 @@
 ###############################################################################
-#                             Function to Check Command Existence            #
-###############################################################################
-command_exists() {
-    command -v "$1" >/dev/null 2>&1
-}
-
-###############################################################################
 #                                       GIT                                   #
 ###############################################################################
 alias ga='git add'
@@ -13,21 +6,21 @@ alias gaa='ga -A'
 alias gc='git commit -m'
 alias gaac='gaa && gc'
 gac() {
-    local message="$1"
-    shift
-    ga "$@" && gc "$message"
+		local message="$1"
+		shift
+		ga "$@" && gc "$message"
 }
 alias gca='git commit --amend --no-edit'
 alias gcam='git commit --amend -m'
 alias gaaca='gaa && gca'
 alias gaacam='gaa && gcam'
 gaca() {
-    ga "$@" && gca
+		ga "$@" && gca
 }
 gacam() {
-    local message="$1"
-    shift
-    ga "$@" && gcam "$message"
+		local message="$1"
+		shift
+		ga "$@" && gcam "$message"
 }
 
 alias gs='git status'
@@ -83,9 +76,7 @@ alias gdf='gd --no-index'
 #     fzf --bind 'enter:execute(bash -c "aerospace focus --window-id {1}")+abort'
 # }
 
-if command_exists z; then
-  alias cd='z'
-fi
+alias cd='z'
 alias cdr="cd -"            # Go return to prev visited dir
 alias cdh='cd ~/LC'
 alias cdp='cd ~/LC/2_Areas/Programming_Projects'
@@ -104,12 +95,8 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
-alias ls='ls -l'
-if command_exists eza; then
-    alias ls="eza --color=always --grid --width=80 --git --no-filesize --icons=always --no-time --no-user --no-permissions"
-    alias lt="ls --tree --level=2"
-
-fi
+alias ls="eza --color=always --grid --width=80 --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias lt="ls --tree --level=2"
 alias la="ls -a"
 
 
@@ -120,13 +107,9 @@ alias la="ls -a"
 alias q='exit'
 alias c='clear'
 alias clr='clear'
-if command_exists bat; then
-  alias cat='bat'
-fi
-if command_exists nvim; then
-  alias vim='nvim'
-  alias vi='nvim'
-fi
+alias cat='bat'
+alias vim='nvim'
+alias vi='nvim'
 alias python='python3'
 alias py='python3'
 alias pip='pip3'
@@ -136,12 +119,9 @@ alias pip='pip3'
 ###############################################################################
 #                                    Packages                                 #
 ###############################################################################
-if command_exists brew; then
-  alias bi="brew install"
-  alias bu="brew uninstall"
-  alias bup='brew update; brew upgrade; brew upgrade --cask; brew cleanup'
-  alias bs="brew search"
-  alias bl="brew list"
-  alias bh="brew info"
-  # Update/upgrade Homebrew and their installed packages
-fi
+alias bi="brew install"
+alias bu="brew uninstall"
+alias bup='brew update; brew upgrade; brew upgrade --cask; brew cleanup'
+alias bs="brew search"
+alias bl="brew list"
+alias bh="brew info"
