@@ -1,5 +1,9 @@
 vim.g.mapleader = " "
 
+vim.opt.tabstop = 4 -- or whatever your desired tab width is
+vim.opt.shiftwidth = 4 -- or whatever your desired shift width is
+vim.opt.expandtab = false -- This ensures tabs are used instead of spaces
+
 -- Remapping Keys
 vim.keymap.set("v", "p", "P") -- replace word by pasting without yanking it
 vim.keymap.set("n", "U", "<C-r>") -- Redo using capital U

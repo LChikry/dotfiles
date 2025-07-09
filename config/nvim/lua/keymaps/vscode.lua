@@ -51,6 +51,8 @@ keymap({"n", "v"}, "<leader>t", "<cmd>lua require('vscode').action('workbench.ac
 
 -- -- general keymaps
 keymap({"n", "v"}, "<leader>cn", "<cmd>lua require('vscode').action('notifications.clearAll')<CR>")
+keymap("n", "<leader><S-F>", "<cmd>lua require('vscode').action('editor.action.indentationToTabs')<CR>")
+keymap("n", "<leader>r", "<cmd>lua require('vscode').action('workbench.action.reloadWindow')<CR>")
 
 -- -- VSCode Harpoon keymaps
 keymap({"n", "v"}, "<leader>ha", "<cmd>lua require('vscode').action('vscode-harpoon.addEditor')<CR>")
