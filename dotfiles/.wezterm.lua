@@ -9,10 +9,21 @@ config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.87
 config.macos_window_background_blur = 10
 config.color_scheme = 'Ayu Mirage'
-config.font = wezterm.font("JetBrainsMono Nerd Font Mono")
 config.font_size = 18
 config.line_height = 1.07
 config.max_fps = 120
+
+config.font = wezterm.font_with_fallback({
+    "JetBrainsMono Nerd Font Mono",
+	"Cairo",
+})
+
+config.bidi_enabled = true
+config.harfbuzz_features = {
+    "calt",
+    "clig",
+    "liga",
+}
 
 config.cursor_blink_ease_in = 'Constant'
 config.cursor_blink_ease_out = 'Constant'

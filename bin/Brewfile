@@ -48,6 +48,7 @@ echo "source $(brew --prefix)/share/.zsh-autosuggestions/zsh-autosuggestions.zsh
 
 cask "font-jetbrains-mono"
 cask "font-jetbrains-mono-nerd-font"
+cask "font-cairo"
 cask "wezterm" #terminal of choice
 cask "arc" #browser
 cask "bitwarden" #Password Manager
