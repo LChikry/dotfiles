@@ -4,19 +4,28 @@
 echo "requesting administrator privileges...."
 sudo -v
 
-real_path="${HOME}/LC/2_Areas/Programming_Projects/dotfiles"
-symlink_path="${HOME}/.dotfiles"
-ln -sf "$real_path" "$symlink_path"
-echo "Symlink created: $symlink_path -> $real_path"
-
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-# make all .sh files in the bin directory executable
-chmod +x ./bin/*.sh
+SCRIPT=$(realpath "$0")
+DOTFILE_PATH=$(dirname "$SCRIPT")
 
-# Loop through all .sh files in the bin directory and execute them
-for script in ./bin/*.sh; do
+# make all .sh files in the bin directory executable
+chmod +x ""${DOTFILE_PATH}"/bin/*.sh"
+
+# Execute symlinks.sh first
+if [[ -f ""${DOTFILE_PATH}"/bin/symlinks.sh" && -x ""${DOTFILE_PATH}"/bin/symlinks.sh" ]]; then
+    echo "Executing "${DOTFILE_PATH}"/bin/symlinks.sh..."
+    "${DOTFILE_PATH}"/bin/symlinks.sh
+else
+    echo "Warning: "${DOTFILE_PATH}"/bin/symlinks.sh not found or not executable. Skipping initial execution."
+    exit 1
+fi
+
+# Loop through and execute other .sh files
+for script in "${DOTFILE_PATH}"/bin/*.sh; do
+    [[ "$(basename "$script")" == "symlinks.sh" ]] && continue # Skip symlinks.sh
+
     if [[ -f "$script" && -x "$script" ]]; then
         echo "Executing $script..."
         "$script"
@@ -25,8 +34,9 @@ for script in ./bin/*.sh; do
     fi
 done
 
+
 # Running apple specific scripts
-for script in ./bin/*.applescript; do
+for script in "${DOTFILE_PATH}"/bin/*.applescript; do
     if [[ -f "$script" ]]; then
         echo "Executing $script..."
         osascript "$script"

@@ -1,4 +1,28 @@
 #!/usr/bin/env zsh
+
+SCRIPT=$(realpath "$0")
+SCRIPT_PATH=$(dirname "$SCRIPT")
+DOTFILE_PATH="$(dirname "${SCRIPT_PATH}")"
+
+SYMLINK_TARGET_NAME=".$(basename "${DOTFILE_PATH}")"
+SYMLINK_PATH="${HOME}/${SYMLINK_TARGET_NAME}"
+
+if [ -L "${SYMLINK_PATH}" ]; then
+    echo "Symlink '${SYMLINK_PATH}' already exists. Removing old symlink..."
+    rm "${SYMLINK_PATH}"
+elif [ -e "${SYMLINK_PATH}" ]; then
+    echo "Error: A file or directory already exists at '${SYMLINK_PATH}'. Please remove it manually before creating the symlink."
+    exit 1
+fi
+
+if ln -sf "${DOTFILE_PATH}" "${SYMLINK_PATH}"; then
+    echo "Successfully symlinked '${DOTFILE_PATH}' to '${SYMLINK_PATH}'"
+else
+    echo "Failed to symlink the DOTFILE directory."
+    exit 1
+fi
+
+
 setopt null_glob  # Prevent errors when glob patterns match nothing
 
 create_symlink() {
