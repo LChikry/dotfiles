@@ -125,8 +125,12 @@
 	"editor.lineNumbers": "relative",
 	"files.encoding": "utf8",
 	"cSpell.userWords": [
+		"Agenti",
 		"Artix",
 		"Chikry",
+		"columnspan",
+		"Consolas",
+		"customtkinter",
 		"dups",
 		"ignorecase",
 		"keymap",
@@ -150,7 +154,7 @@
 	"git.openRepositoryInParentFolders": "always",
 	"editor.tokenColorCustomizations": {},
 	"vexrobotics.vexcode.Project.Home": "~/Documents/vex-vscode-projects",
-	"vexrobotics.vexcode.Cpp.Sdk.Home": "~/Library/Application Support/Code/User/globalStorage/vexrobotics.vexcode/sdk/cpp",
+	"vexrobotics.vexcode.Cpp.Sdk.Home": "/Users/testing/Library/Application Support/Code/User/globalStorage/vexrobotics.vexcode/sdk/cpp",
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"prettier.tabWidth": 4,
 	"prettier.useTabs": true,
@@ -174,5 +178,15 @@
 	"terminal.integrated.cursorStyleInactive": "outline",
 	"terminal.integrated.cursorBlinking": true,
 	"workbench.editor.showTabs": "none",
-	"workbench.iconTheme": "symbols"
+	"workbench.iconTheme": "symbols",
+	"vexrobotics.vexcode.Cpp.Toolchain.Path": "/Users/testing/Library/Application Support/Code/User/globalStorage/vexrobotics.vexcode/tools/cpp/toolchain_osxarm64",
+	"explorer.compactFolders": false,
+	"[c]": {
+		"editor.defaultFormatter": "ms-vscode.cpptools"
+	},
+	"C_Cpp.default.cppStandard": "c++23",
+	"C_Cpp.default.cStandard": "c23",
+	"C_Cpp.clang_format_fallbackStyle": "Google",
+	"C_Cpp.clang_format_style": "Google",
+	"explorer.confirmDragAndDrop": false
 }
