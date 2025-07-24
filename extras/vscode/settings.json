@@ -188,5 +188,6 @@
 	"C_Cpp.default.cStandard": "c23",
 	"C_Cpp.clang_format_fallbackStyle": "Google",
 	"C_Cpp.clang_format_style": "Google",
-	"explorer.confirmDragAndDrop": false
+	"explorer.confirmDragAndDrop": false,
+	"workbench.secondarySideBar.defaultVisibility": "hidden"
 }

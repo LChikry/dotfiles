@@ -79,14 +79,14 @@ alias gdf='gd --no-index'
 alias cd='z'
 alias cdr="cd -"            # Go return to prev visited dir
 alias cdh='cd ${HOME}/LC'
-alias cdp='cd ${HOME}/LC/4_Coding'
-alias cds='cd ${HOME}/LC/5_AUI_University/7_Summer25'
+alias cdp='cd ${HOME}/LC/2_Coding'
+alias cds='cd ${HOME}/LC/4_AUI_University/7_Summer25'
 alias cddw='cd ${HOME}/Downloads'
 alias cddk='cd ${HOME}/Desktop' 
 alias cddc='cd ${HOME}/Documents'
 alias cdfh='open ${HOME}/LC'
-alias cdfp='open ${HOME}/LC/4_Coding'
-alias cdfs='open ${HOME}/LC/5_AUI_University/7_Summer25'
+alias cdfp='open ${HOME}/LC/2_Coding'
+alias cdfs='open ${HOME}/LC/4_AUI_University/7_Fall25'
 alias cdfdw='open ${HOME}/Downloads'
 alias cdfds='open ${HOME}/Desktop' 
 alias cdfdc='open ${HOME}/Documents'
@@ -97,7 +97,9 @@ alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 alias ls="eza -l --color=always --icons=always --git --grid --width=80 --no-filesize --no-permissions --no-time --no-user"
 alias lt="ls --tree --level=2"
-alias la="ls -a"
+alias ll="eza -l --color=always --icons=always --git --width=80 --no-filesize --no-user"
+alias lsa="ls -a"
+alias lta="lt -a"
 
 
 
