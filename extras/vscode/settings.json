@@ -145,7 +145,8 @@
 		"wezterm",
 		"whitesmoke",
 		"zhistory",
-		"Zoxide"
+		"Zoxide",
+		"أخرى"
 	],
 	"code-runner.runInTerminal": true,
 	"terminal.integrated.inheritEnv": false,
@@ -189,5 +190,8 @@
 	"C_Cpp.clang_format_fallbackStyle": "Google",
 	"C_Cpp.clang_format_style": "Google",
 	"explorer.confirmDragAndDrop": false,
-	"workbench.secondarySideBar.defaultVisibility": "hidden"
+	"workbench.secondarySideBar.defaultVisibility": "hidden",
+	"liveServer.settings.donotShowInfoMsg": true,
+	"liveServer.settings.useLocalIp": true,
+	"javascript.updateImportsOnFileMove.enabled": "always"
 }

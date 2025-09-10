@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Always make it first in <head> tag -->
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			property="og:description"
+			content="the official website of Tacos Snack"
+		/>
+		<!-- include max. 8 keywords-->
+		<meta
+			name="keywords"
+			property="og:keywords"
+			content="tacos, tacos menu"
+		/>
+		<meta property="og:image" content="images/social.jpg" />
+		<meta property="og:title" content="Tacos Snack" />
+		<title>Page Title - Site Name</title>
+
+		<!-- use media attr with stylesheets -->
+		<link rel="stylesheet" href="home_style.css" media="screen" />
+		<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+		<link rel="mask-icon" href="maskIcon.svg" color="#90FF00" />
+		<link rel="shortcut icon" href="favicon.ico" />
+
+		<!-- /////////////// Pre Fetching  /////////////// -->
+
+		<!-- More info: https://css-tricks.com/prefetching-preloading-prebrowsing/ -->
+		<link rel="”dns-prefetch”" href="external url that we'll fetch from" />
+		<link rel="preconnect" href="external server that we'll fetch from" />
+		<link rel="preload" href="/assets/tacos_and_drink_1000x667.png" />
+
+		<link rel="prefetch" href="https://www.example.com/">
+		<link rel="prerender" href="https://example.com/">
+
+		<!-- /////  Provide Alternative of your webpage content  //// -->
+		<link
+			rel="alternate"
+			href="/rss"
+			title="Describe the RSS feed linked to the page here"
+			type="application/rss+xml"
+		/>
+		<link
+			rel="alternate"
+			href="/pdf/thispage.pdf"
+			title="Describe the PDF linked to the page here"
+			type="application/pdf"
+		/>
+		<link
+			rel="alternate"
+			href="/fr/this"
+			hreflang="fr"
+			title="Cette page en français"
+		/>
+
+		<!-- ///////////////  Optional Navingation if Exist /////////////// -->
+		<link
+			rel="prev"
+			href="/cat/general/testThread?page=2"
+			title="previous page in 'test thread'"
+		/>
+		<link
+			rel="next"
+			href="/cat/general/testThread?page=4"
+			title="next page
+		in 'test thread'"
+		/>
+	</head>
+	<body>
+		<h1>page title</h1>
+	</body>
+</html>

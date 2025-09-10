@@ -15,6 +15,7 @@ brew "zsh"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 brew "starship" #terminal prompt
+brew "pnpm"
 brew "neovim" #code editor
 brew "gcc" #C/C++ compiler
 brew "python"

@@ -28,3 +28,5 @@ setopt hist_verify
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 bindkey '\t' end-of-line
+export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
+

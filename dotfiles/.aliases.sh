@@ -127,3 +127,4 @@ alias bup='brew update; brew upgrade; brew upgrade --cask; brew cleanup'
 alias bs="brew search"
 alias bl="brew list"
 alias bh="brew info"
+alias pn='pnpm'
